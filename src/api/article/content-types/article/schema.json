@@ -87,13 +87,19 @@
       },
       "required": true
     },
-    "markdown": {
+    "og": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      },
-      "type": "blocks"
+      }
     }
   }
 }
