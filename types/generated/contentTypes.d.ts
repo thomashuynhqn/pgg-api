@@ -544,7 +544,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
+        maxLength: 300;
       }>;
     slug: Schema.Attribute.UID<'title'>;
     cover: Schema.Attribute.Media<'images' | 'files'> &
