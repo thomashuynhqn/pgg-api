@@ -58,11 +58,10 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
+      "relation": "oneToMany",
+      "target": "api::category.category"
     },
     "blocks": {
       "type": "dynamiczone",
@@ -100,6 +99,11 @@
           "localized": false
         }
       }
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
     }
   }
 }

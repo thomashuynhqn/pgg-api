@@ -3,9 +3,11 @@
 import { Media } from '../../../../components/shared/interfaces/Media';
 import { Author } from '../../../author/content-types/author/author';
 import { Category } from '../../../category/content-types/category/category';
+import { Tag } from '../../../tag/content-types/tag/tag';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Author_Plain } from '../../../author/content-types/author/author';
 import { Category_Plain } from '../../../category/content-types/category/category';
+import { Tag_Plain } from '../../../tag/content-types/tag/tag';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Article {
@@ -16,10 +18,11 @@ export interface Article {
     slug?: string;
     cover: { data: Media };
     author?: { data: Author };
-    category?: { data: Category };
+    categories: { data: Category[] };
     blocks?: any;
     content: string;
     og: { data: Media };
+    tags: { data: Tag[] };
     locale: string;
     localizations?: { data: Article[] };
   };
@@ -31,10 +34,11 @@ export interface Article_Plain {
   slug?: string;
   cover: Media_Plain;
   author?: Author_Plain;
-  category?: Category_Plain;
+  categories: Category_Plain[];
   blocks?: any;
   content: string;
   og: Media_Plain;
+  tags: Tag_Plain[];
   locale: string;
   localizations?: Article_Plain[];
 }
@@ -46,10 +50,11 @@ export interface Article_NoRelations {
   slug?: string;
   cover: number;
   author?: number;
-  category?: number;
+  categories: number[];
   blocks?: any;
   content: string;
   og: number;
+  tags: number[];
   locale: string;
   localizations?: Article[];
 }
@@ -61,10 +66,11 @@ export interface Article_AdminPanelLifeCycle {
   slug?: string;
   cover: AdminPanelRelationPropertyModification<Media_Plain>;
   author?: AdminPanelRelationPropertyModification<Author_Plain>;
-  category?: AdminPanelRelationPropertyModification<Category_Plain>;
+  categories: AdminPanelRelationPropertyModification<Category_Plain>;
   blocks?: any;
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
+  tags: AdminPanelRelationPropertyModification<Tag_Plain>;
   locale: string;
   localizations?: Article[];
 }
