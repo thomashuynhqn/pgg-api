@@ -607,6 +607,7 @@ export interface ApiArticleEcoArticleEco extends Struct.CollectionTypeSchema {
     singularName: 'article-eco';
     pluralName: 'article-ecos';
     displayName: 'ArticleEco';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -618,10 +619,6 @@ export interface ApiArticleEcoArticleEco extends Struct.CollectionTypeSchema {
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
     categories: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    > &
-      Schema.Attribute.Required;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     og: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;

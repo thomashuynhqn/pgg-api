@@ -4,7 +4,8 @@
   "info": {
     "singularName": "article-eco",
     "pluralName": "article-ecos",
-    "displayName": "ArticleEco"
+    "displayName": "ArticleEco",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,14 +23,15 @@
       "targetField": "title"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "author": {
       "type": "relation",
@@ -42,28 +44,18 @@
       "relation": "oneToMany",
       "target": "api::article.article"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
-      ],
-      "required": true
-    },
     "content": {
       "type": "richtext",
       "required": true
     },
     "og": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "tags": {
       "type": "relation",

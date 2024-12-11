@@ -15,7 +15,6 @@ export interface ArticleEco {
     cover?: { data: Media };
     author?: { data: Article };
     categories: { data: Article[] };
-    blocks: any;
     content: string;
     og: { data: Media };
     tags: { data: Article[] };
@@ -29,7 +28,6 @@ export interface ArticleEco_Plain {
   cover?: Media_Plain;
   author?: Article_Plain;
   categories: Article_Plain[];
-  blocks: any;
   content: string;
   og: Media_Plain;
   tags: Article_Plain[];
@@ -43,7 +41,6 @@ export interface ArticleEco_NoRelations {
   cover?: number;
   author?: number;
   categories: number[];
-  blocks: any;
   content: string;
   og: number;
   tags: number[];
@@ -57,7 +54,6 @@ export interface ArticleEco_AdminPanelLifeCycle {
   cover?: AdminPanelRelationPropertyModification<Media_Plain>;
   author?: AdminPanelRelationPropertyModification<Article_Plain>;
   categories: AdminPanelRelationPropertyModification<Article_Plain>;
-  blocks: any;
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Article_Plain>;
