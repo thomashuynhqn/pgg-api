@@ -582,6 +582,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         };
       }>;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    article_ecos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article-eco.article-eco'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -593,6 +597,45 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::article.article'
+    >;
+  };
+}
+
+export interface ApiArticleEcoArticleEco extends Struct.CollectionTypeSchema {
+  collectionName: 'article_ecos';
+  info: {
+    singularName: 'article-eco';
+    pluralName: 'article-ecos';
+    displayName: 'ArticleEco';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    author: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
+    categories: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    blocks: Schema.Attribute.DynamicZone<
+      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+    > &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    og: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article-eco.article-eco'
     >;
   };
 }
@@ -1144,6 +1187,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
+      'api::article-eco.article-eco': ApiArticleEcoArticleEco;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;

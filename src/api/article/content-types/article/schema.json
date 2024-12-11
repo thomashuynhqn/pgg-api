@@ -104,6 +104,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tag.tag"
+    },
+    "article_ecos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article-eco.article-eco",
+      "mappedBy": "author"
     }
   }
 }

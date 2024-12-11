@@ -4,10 +4,12 @@ import { Media } from '../../../../components/shared/interfaces/Media';
 import { Author } from '../../../author/content-types/author/author';
 import { Category } from '../../../category/content-types/category/category';
 import { Tag } from '../../../tag/content-types/tag/tag';
+import { ArticleEco } from '../../../article-eco/content-types/article-eco/article-eco';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Author_Plain } from '../../../author/content-types/author/author';
 import { Category_Plain } from '../../../category/content-types/category/category';
 import { Tag_Plain } from '../../../tag/content-types/tag/tag';
+import { ArticleEco_Plain } from '../../../article-eco/content-types/article-eco/article-eco';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Article {
@@ -23,6 +25,7 @@ export interface Article {
     content: string;
     og: { data: Media };
     tags: { data: Tag[] };
+    article_ecos: { data: ArticleEco[] };
     locale: string;
     localizations?: { data: Article[] };
   };
@@ -39,6 +42,7 @@ export interface Article_Plain {
   content: string;
   og: Media_Plain;
   tags: Tag_Plain[];
+  article_ecos: ArticleEco_Plain[];
   locale: string;
   localizations?: Article_Plain[];
 }
@@ -55,6 +59,7 @@ export interface Article_NoRelations {
   content: string;
   og: number;
   tags: number[];
+  article_ecos: number[];
   locale: string;
   localizations?: Article[];
 }
@@ -71,6 +76,7 @@ export interface Article_AdminPanelLifeCycle {
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Tag_Plain>;
+  article_ecos: AdminPanelRelationPropertyModification<ArticleEco_Plain>;
   locale: string;
   localizations?: Article[];
 }
