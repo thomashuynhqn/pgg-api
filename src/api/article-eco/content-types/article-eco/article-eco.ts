@@ -18,6 +18,8 @@ export interface ArticleEco {
     content: string;
     og: { data: Media };
     tags: { data: Article[] };
+    locale: string;
+    localizations?: { data: ArticleEco[] };
   };
 }
 export interface ArticleEco_Plain {
@@ -31,6 +33,8 @@ export interface ArticleEco_Plain {
   content: string;
   og: Media_Plain;
   tags: Article_Plain[];
+  locale: string;
+  localizations?: ArticleEco_Plain[];
 }
 
 export interface ArticleEco_NoRelations {
@@ -44,6 +48,8 @@ export interface ArticleEco_NoRelations {
   content: string;
   og: number;
   tags: number[];
+  locale: string;
+  localizations?: ArticleEco[];
 }
 
 export interface ArticleEco_AdminPanelLifeCycle {
@@ -57,4 +63,6 @@ export interface ArticleEco_AdminPanelLifeCycle {
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Article_Plain>;
+  locale: string;
+  localizations?: ArticleEco[];
 }
