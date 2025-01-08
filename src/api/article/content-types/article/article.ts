@@ -26,6 +26,7 @@ export interface Article {
     og: { data: Media };
     tags: { data: Tag[] };
     article_ecos: { data: ArticleEco[] };
+    spotlight: boolean;
     locale: string;
     localizations?: { data: Article[] };
   };
@@ -43,6 +44,7 @@ export interface Article_Plain {
   og: Media_Plain;
   tags: Tag_Plain[];
   article_ecos: ArticleEco_Plain[];
+  spotlight: boolean;
   locale: string;
   localizations?: Article_Plain[];
 }
@@ -60,6 +62,7 @@ export interface Article_NoRelations {
   og: number;
   tags: number[];
   article_ecos: number[];
+  spotlight: boolean;
   locale: string;
   localizations?: Article[];
 }
@@ -77,6 +80,7 @@ export interface Article_AdminPanelLifeCycle {
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Tag_Plain>;
   article_ecos: AdminPanelRelationPropertyModification<ArticleEco_Plain>;
+  spotlight: boolean;
   locale: string;
   localizations?: Article[];
 }

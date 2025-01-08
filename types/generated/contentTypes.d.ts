@@ -586,6 +586,14 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::article-eco.article-eco'
     >;
+    spotlight: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
