@@ -5,11 +5,13 @@ import { Author } from '../../../author/content-types/author/author';
 import { Category } from '../../../category/content-types/category/category';
 import { Tag } from '../../../tag/content-types/tag/tag';
 import { ArticleEco } from '../../../article-eco/content-types/article-eco/article-eco';
+import { ArticleFtk } from '../../../article-ftk/content-types/article-ftk/article-ftk';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Author_Plain } from '../../../author/content-types/author/author';
 import { Category_Plain } from '../../../category/content-types/category/category';
 import { Tag_Plain } from '../../../tag/content-types/tag/tag';
 import { ArticleEco_Plain } from '../../../article-eco/content-types/article-eco/article-eco';
+import { ArticleFtk_Plain } from '../../../article-ftk/content-types/article-ftk/article-ftk';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Article {
@@ -26,6 +28,7 @@ export interface Article {
     og: { data: Media };
     tags: { data: Tag[] };
     article_ecos: { data: ArticleEco[] };
+    article_ftks: { data: ArticleFtk[] };
     spotlight: boolean;
     locale: string;
     localizations?: { data: Article[] };
@@ -44,6 +47,7 @@ export interface Article_Plain {
   og: Media_Plain;
   tags: Tag_Plain[];
   article_ecos: ArticleEco_Plain[];
+  article_ftks: ArticleFtk_Plain[];
   spotlight: boolean;
   locale: string;
   localizations?: Article_Plain[];
@@ -62,6 +66,7 @@ export interface Article_NoRelations {
   og: number;
   tags: number[];
   article_ecos: number[];
+  article_ftks: number[];
   spotlight: boolean;
   locale: string;
   localizations?: Article[];
@@ -80,6 +85,7 @@ export interface Article_AdminPanelLifeCycle {
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Tag_Plain>;
   article_ecos: AdminPanelRelationPropertyModification<ArticleEco_Plain>;
+  article_ftks: AdminPanelRelationPropertyModification<ArticleFtk_Plain>;
   spotlight: boolean;
   locale: string;
   localizations?: Article[];

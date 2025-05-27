@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_types",
+  "info": {
+    "singularName": "question-type",
+    "pluralName": "question-types",
+    "displayName": "QuestionType"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "text": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "yesNo": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
+    "multipleOptions": {
+      "displayName": "options",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "question.options"
+    }
+  }
+}

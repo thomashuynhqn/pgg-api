@@ -62,6 +62,14 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface QuestionOptions extends Struct.ComponentSchema {
+  collectionName: 'components_question_options';
+  info: {
+    displayName: 'options';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +78,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'question.options': QuestionOptions;
     }
   }
 }

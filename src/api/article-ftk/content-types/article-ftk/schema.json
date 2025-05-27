@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "article_ftks",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article",
-    "description": "Create your blog content"
+    "singularName": "article-ftk",
+    "pluralName": "article-ftks",
+    "displayName": "ArticleFtk",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,16 +27,18 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 300,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "maxLength": 300
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "cover": {
       "type": "media",
@@ -44,7 +46,9 @@
       "required": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos",
+        "audios"
       ],
       "pluginOptions": {
         "i18n": {
@@ -55,36 +59,22 @@
     "author": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+      "target": "api::article.article",
+      "inversedBy": "article_ftks"
     },
     "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::category.category"
+      "target": "api::article.article"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
-      ],
+    "content": {
+      "type": "richtext",
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
-    },
-    "content": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
     },
     "og": {
       "type": "media",
@@ -96,36 +86,14 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     },
     "tags": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::tag.tag"
-    },
-    "article_ecos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article-eco.article-eco",
-      "mappedBy": "author"
-    },
-    "article_ftks": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article-ftk.article-ftk",
-      "mappedBy": "author"
-    },
-    "spotlight": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "default": false,
-      "required": true
+      "target": "api::article.article"
     }
   }
 }
