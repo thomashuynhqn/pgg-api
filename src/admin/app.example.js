@@ -1,5 +1,7 @@
 const config = {
   locales: [
+    'en', // Default locale
+    'vi', // Vietnamese
     // 'ar',
     // 'fr',
     // 'cs',
