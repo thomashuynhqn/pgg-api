@@ -94,6 +94,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "publishDate": {
+      "type": "datetime",
+      "displayName": "Scheduled Publication",
+      "description": "Set when this FTK article should be automatically published",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

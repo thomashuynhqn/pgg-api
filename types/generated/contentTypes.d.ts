@@ -598,6 +598,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
+    publishDate: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -672,6 +678,12 @@ export interface ApiArticleEcoArticleEco extends Struct.CollectionTypeSchema {
         };
       }>;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    publishDate: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -746,6 +758,12 @@ export interface ApiArticleFtkArticleFtk extends Struct.CollectionTypeSchema {
         };
       }>;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    publishDate: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -42,10 +42,7 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
+      "allowedTypes": ["images", "files"],
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -90,10 +87,7 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
+      "allowedTypes": ["images", "files"],
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -126,6 +120,16 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "publishDate": {
+      "type": "datetime",
+      "displayName": "Scheduled Publication",
+      "description": "Set when this article should be automatically published",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
