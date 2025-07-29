@@ -18,6 +18,7 @@ export interface ArticleFtk {
     content: string;
     og: { data: Media };
     tags: { data: Article[] };
+    publishDate?: Date;
     locale: string;
     localizations?: { data: ArticleFtk[] };
   };
@@ -33,6 +34,7 @@ export interface ArticleFtk_Plain {
   content: string;
   og: Media_Plain;
   tags: Article_Plain[];
+  publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk_Plain[];
 }
@@ -48,6 +50,7 @@ export interface ArticleFtk_NoRelations {
   content: string;
   og: number;
   tags: number[];
+  publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk[];
 }
@@ -63,6 +66,7 @@ export interface ArticleFtk_AdminPanelLifeCycle {
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Article_Plain>;
+  publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk[];
 }

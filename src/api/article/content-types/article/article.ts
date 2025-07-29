@@ -30,6 +30,7 @@ export interface Article {
     article_ecos: { data: ArticleEco[] };
     article_ftks: { data: ArticleFtk[] };
     spotlight: boolean;
+    publishDate?: Date;
     locale: string;
     localizations?: { data: Article[] };
   };
@@ -49,6 +50,7 @@ export interface Article_Plain {
   article_ecos: ArticleEco_Plain[];
   article_ftks: ArticleFtk_Plain[];
   spotlight: boolean;
+  publishDate?: Date;
   locale: string;
   localizations?: Article_Plain[];
 }
@@ -68,6 +70,7 @@ export interface Article_NoRelations {
   article_ecos: number[];
   article_ftks: number[];
   spotlight: boolean;
+  publishDate?: Date;
   locale: string;
   localizations?: Article[];
 }
@@ -87,6 +90,7 @@ export interface Article_AdminPanelLifeCycle {
   article_ecos: AdminPanelRelationPropertyModification<ArticleEco_Plain>;
   article_ftks: AdminPanelRelationPropertyModification<ArticleFtk_Plain>;
   spotlight: boolean;
+  publishDate?: Date;
   locale: string;
   localizations?: Article[];
 }
