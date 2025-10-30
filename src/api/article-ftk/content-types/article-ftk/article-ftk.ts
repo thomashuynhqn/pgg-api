@@ -2,8 +2,10 @@
 
 import { Media } from '../../../../components/shared/interfaces/Media';
 import { Article } from '../../../article/content-types/article/article';
+import { TagFtk } from '../../../tag-ftk/content-types/tag-ftk/tag-ftk';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Article_Plain } from '../../../article/content-types/article/article';
+import { TagFtk_Plain } from '../../../tag-ftk/content-types/tag-ftk/tag-ftk';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface ArticleFtk {
@@ -18,6 +20,7 @@ export interface ArticleFtk {
     content: string;
     og: { data: Media };
     tags: { data: Article[] };
+    ftk_tags?: { data: TagFtk[] };
     publishDate?: Date;
     locale: string;
     localizations?: { data: ArticleFtk[] };
@@ -34,6 +37,7 @@ export interface ArticleFtk_Plain {
   content: string;
   og: Media_Plain;
   tags: Article_Plain[];
+  ftk_tags?: TagFtk_Plain[];
   publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk_Plain[];
@@ -50,6 +54,7 @@ export interface ArticleFtk_NoRelations {
   content: string;
   og: number;
   tags: number[];
+  ftk_tags?: number[];
   publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk[];
@@ -66,6 +71,7 @@ export interface ArticleFtk_AdminPanelLifeCycle {
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Article_Plain>;
+  ftk_tags?: AdminPanelRelationPropertyModification<TagFtk_Plain>;
   publishDate?: Date;
   locale: string;
   localizations?: ArticleFtk[];

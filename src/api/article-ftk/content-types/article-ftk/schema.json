@@ -95,6 +95,12 @@
       "relation": "oneToMany",
       "target": "api::article.article"
     },
+    "ftk_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag-ftk.tag-ftk",
+      "inversedBy": "articles"
+    },
     "publishDate": {
       "type": "datetime",
       "displayName": "Scheduled Publication",
