@@ -16,6 +16,18 @@ export default {
               }
             }
           },
+          'api::article-raydiancloud.article-raydiancloud': {
+            fields: {
+              publishDate: {
+                label: 'Scheduled Publication',
+                placeholder: {
+                  date: 'Publish date',
+                  time: 'Publish time'
+                },
+                hint: 'Set when this RaydianCloud article should be automatically published'
+              }
+            }
+          },
           'api::article-ftk.article-ftk': {
             fields: {
               publishDate: {
