@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "article_ftks",
+  "collectionName": "article_raydianclouds",
   "info": {
-    "singularName": "article-ftk",
-    "pluralName": "article-ftks",
-    "displayName": "ArticleFtk",
+    "singularName": "article-raydiancloud",
+    "pluralName": "article-raydianclouds",
+    "displayName": "ArticleRaydianCloud",
     "description": ""
   },
   "options": {
@@ -60,7 +60,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::article.article",
-      "inversedBy": "article_ftks"
+      "inversedBy": "article_raydianclouds"
     },
     "categories": {
       "type": "relation",
@@ -95,16 +95,16 @@
       "relation": "oneToMany",
       "target": "api::article.article"
     },
-    "ftk_tags": {
+    "raydiancloud_tags": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::tag-ftk.tag-ftk",
+      "target": "api::tag-raydiancloud.tag-raydiancloud",
       "inversedBy": "articles"
     },
     "publishDate": {
       "type": "datetime",
       "displayName": "Scheduled Publication",
-      "description": "Set when this FTK article should be automatically published",
+      "description": "Set when this RaydianCloud article should be automatically published",
       "pluginOptions": {
         "i18n": {
           "localized": false

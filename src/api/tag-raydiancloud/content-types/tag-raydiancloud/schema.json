@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tag_raydianclouds",
+  "info": {
+    "singularName": "tag-raydiancloud",
+    "pluralName": "tag-raydianclouds",
+    "displayName": "TagRaydianCloud",
+    "description": "Classification tags available for RaydianCloud articles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article-raydiancloud.article-raydiancloud",
+      "mappedBy": "raydiancloud_tags"
+    }
+  }
+}

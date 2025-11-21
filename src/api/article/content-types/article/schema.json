@@ -111,6 +111,12 @@
       "target": "api::article-ftk.article-ftk",
       "mappedBy": "author"
     },
+    "article_raydianclouds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article-raydiancloud.article-raydiancloud",
+      "mappedBy": "author"
+    },
     "spotlight": {
       "pluginOptions": {
         "i18n": {

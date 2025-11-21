@@ -2,13 +2,13 @@
 
 import { Media } from '../../../../components/shared/interfaces/Media';
 import { Article } from '../../../article/content-types/article/article';
-import { TagFtk } from '../../../tag-ftk/content-types/tag-ftk/tag-ftk';
+import { TagRaydiancloud } from '../../../tag-raydiancloud/content-types/tag-raydiancloud/tag-raydiancloud';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Article_Plain } from '../../../article/content-types/article/article';
-import { TagFtk_Plain } from '../../../tag-ftk/content-types/tag-ftk/tag-ftk';
+import { TagRaydiancloud_Plain } from '../../../tag-raydiancloud/content-types/tag-raydiancloud/tag-raydiancloud';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
-export interface ArticleFtk {
+export interface ArticleRaydiancloud {
   id: number;
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    title: string;
@@ -20,13 +20,13 @@ export interface ArticleFtk {
     content: string;
     og: { data: Media };
     tags: { data: Article[] };
-    ftk_tags?: { data: TagFtk[] };
+    raydiancloud_tags?: { data: TagRaydiancloud[] };
     publishDate?: Date;
     locale: string;
-    localizations?: { data: ArticleFtk[] };
+    localizations?: { data: ArticleRaydiancloud[] };
   };
 }
-export interface ArticleFtk_Plain {
+export interface ArticleRaydiancloud_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title: string;
   description: string;
@@ -37,13 +37,13 @@ export interface ArticleFtk_Plain {
   content: string;
   og: Media_Plain;
   tags: Article_Plain[];
-  ftk_tags?: TagFtk_Plain[];
+  raydiancloud_tags?: TagRaydiancloud_Plain[];
   publishDate?: Date;
   locale: string;
-  localizations?: ArticleFtk_Plain[];
+  localizations?: ArticleRaydiancloud_Plain[];
 }
 
-export interface ArticleFtk_NoRelations {
+export interface ArticleRaydiancloud_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title: string;
   description: string;
@@ -54,13 +54,13 @@ export interface ArticleFtk_NoRelations {
   content: string;
   og: number;
   tags: number[];
-  ftk_tags?: number[];
+  raydiancloud_tags?: number[];
   publishDate?: Date;
   locale: string;
-  localizations?: ArticleFtk[];
+  localizations?: ArticleRaydiancloud[];
 }
 
-export interface ArticleFtk_AdminPanelLifeCycle {
+export interface ArticleRaydiancloud_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title: string;
   description: string;
@@ -71,8 +71,8 @@ export interface ArticleFtk_AdminPanelLifeCycle {
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
   tags: AdminPanelRelationPropertyModification<Article_Plain>;
-  ftk_tags?: AdminPanelRelationPropertyModification<TagFtk_Plain>;
+  raydiancloud_tags?: AdminPanelRelationPropertyModification<TagRaydiancloud_Plain>;
   publishDate?: Date;
   locale: string;
-  localizations?: ArticleFtk[];
+  localizations?: ArticleRaydiancloud[];
 }
