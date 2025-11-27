@@ -6,14 +6,12 @@ import { Category } from '../../../category/content-types/category/category';
 import { Tag } from '../../../tag/content-types/tag/tag';
 import { ArticleEco } from '../../../article-eco/content-types/article-eco/article-eco';
 import { ArticleFtk } from '../../../article-ftk/content-types/article-ftk/article-ftk';
-import { ArticleRaydiancloud } from '../../../article-raydiancloud/content-types/article-raydiancloud/article-raydiancloud';
 import { Media_Plain } from '../../../../components/shared/interfaces/Media';
 import { Author_Plain } from '../../../author/content-types/author/author';
 import { Category_Plain } from '../../../category/content-types/category/category';
 import { Tag_Plain } from '../../../tag/content-types/tag/tag';
 import { ArticleEco_Plain } from '../../../article-eco/content-types/article-eco/article-eco';
 import { ArticleFtk_Plain } from '../../../article-ftk/content-types/article-ftk/article-ftk';
-import { ArticleRaydiancloud_Plain } from '../../../article-raydiancloud/content-types/article-raydiancloud/article-raydiancloud';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Article {
@@ -31,7 +29,6 @@ export interface Article {
     tags: { data: Tag[] };
     article_ecos: { data: ArticleEco[] };
     article_ftks: { data: ArticleFtk[] };
-    article_raydianclouds: { data: ArticleRaydiancloud[] };
     spotlight: boolean;
     publishDate?: Date;
     locale: string;
@@ -52,7 +49,6 @@ export interface Article_Plain {
   tags: Tag_Plain[];
   article_ecos: ArticleEco_Plain[];
   article_ftks: ArticleFtk_Plain[];
-  article_raydianclouds: ArticleRaydiancloud_Plain[];
   spotlight: boolean;
   publishDate?: Date;
   locale: string;
@@ -73,7 +69,6 @@ export interface Article_NoRelations {
   tags: number[];
   article_ecos: number[];
   article_ftks: number[];
-  article_raydianclouds: number[];
   spotlight: boolean;
   publishDate?: Date;
   locale: string;
@@ -94,7 +89,6 @@ export interface Article_AdminPanelLifeCycle {
   tags: AdminPanelRelationPropertyModification<Tag_Plain>;
   article_ecos: AdminPanelRelationPropertyModification<ArticleEco_Plain>;
   article_ftks: AdminPanelRelationPropertyModification<ArticleFtk_Plain>;
-  article_raydianclouds: AdminPanelRelationPropertyModification<ArticleRaydiancloud_Plain>;
   spotlight: boolean;
   publishDate?: Date;
   locale: string;
