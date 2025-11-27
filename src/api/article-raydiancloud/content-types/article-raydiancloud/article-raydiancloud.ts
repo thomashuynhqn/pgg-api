@@ -15,7 +15,7 @@ export interface ArticleRaydiancloud {
     description: string;
     slug: string;
     cover: { data: Media };
-    author?: { data: Article };
+    author?: string;
     categories: { data: Article[] };
     content: string;
     og: { data: Media };
@@ -32,7 +32,7 @@ export interface ArticleRaydiancloud_Plain {
   description: string;
   slug: string;
   cover: Media_Plain;
-  author?: Article_Plain;
+  author?: string;
   categories: Article_Plain[];
   content: string;
   og: Media_Plain;
@@ -49,7 +49,7 @@ export interface ArticleRaydiancloud_NoRelations {
   description: string;
   slug: string;
   cover: number;
-  author?: number;
+  author?: string;
   categories: number[];
   content: string;
   og: number;
@@ -66,7 +66,7 @@ export interface ArticleRaydiancloud_AdminPanelLifeCycle {
   description: string;
   slug: string;
   cover: AdminPanelRelationPropertyModification<Media_Plain>;
-  author?: AdminPanelRelationPropertyModification<Article_Plain>;
+  author?: string;
   categories: AdminPanelRelationPropertyModification<Article_Plain>;
   content: string;
   og: AdminPanelRelationPropertyModification<Media_Plain>;
